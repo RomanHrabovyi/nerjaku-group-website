@@ -1,12 +1,12 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { copy, type Locale } from "@/lib/site-content";
+import { copy } from "@/lib/site-content";
 
 const whatsappNumber = "355682939145";
 
-export function ContactForm({ locale }: { locale: Locale }) {
-  const text = copy[locale];
+export function ContactForm() {
+  const text = copy;
 
   function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -35,7 +35,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
         <span>{text.projectDetails}</span>
         <textarea name="details" rows={4} required />
       </label>
-      <button className="button button--yellow form-submit" type="submit">
+      <button className="button button--beige form-submit" type="submit">
         {text.send} <span aria-hidden="true">↗</span>
       </button>
       <p className="form-note">{text.whatsappNote}</p>

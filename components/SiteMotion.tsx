@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export function SiteMotion({ children, locale }: { children: ReactNode; locale: string }) {
+export function SiteMotion({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -85,5 +85,5 @@ export function SiteMotion({ children, locale }: { children: ReactNode; locale: 
     { scope: root },
   );
 
-  return <div className="site-root" lang={locale} ref={root}>{children}</div>;
+  return <div className="site-root" lang="sq" ref={root}>{children}</div>;
 }

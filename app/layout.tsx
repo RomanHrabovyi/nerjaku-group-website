@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nerjaku Group | Construction & Renovation in Albania",
+  title: "Nerjaku Group | Ndërtim dhe Rinovim në Shqipëri",
   description:
-    "Construction, facade, drywall, insulation and finishing services in Durrës, Golem, Kavajë, Shijak and across Albania.",
+    "Shërbime ndërtimi, fasadash, gipsi, izolimi dhe finiturash në Durrës, Golem, Kavajë, Shijak dhe në Shqipëri.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="sq"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

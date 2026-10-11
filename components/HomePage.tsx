@@ -6,7 +6,6 @@ import {
   copy,
   projectImages,
   serviceImages,
-  type Locale,
 } from "@/lib/site-content";
 
 const photo = (url: string): React.CSSProperties => ({ backgroundImage: `url("${url}")` });
@@ -19,13 +18,13 @@ function ArrowMark() {
   return <span aria-hidden="true" className="arrow-mark">↗</span>;
 }
 
-export function HomePage({ locale }: { locale: Locale }) {
-  const text = copy[locale];
+export function HomePage() {
+  const text = copy;
   const ids = ["home", "services", "projects", "about", "contact"];
 
   return (
-    <SiteMotion locale={locale}>
-      <SiteHeader locale={locale} />
+    <SiteMotion>
+      <SiteHeader />
       <main>
         <section aria-labelledby="hero-title" className="hero" id="home">
           <div
@@ -45,7 +44,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             </h1>
             <p className="hero-copy" data-hero-item>{text.heroBody}</p>
             <div className="hero-actions" data-hero-item>
-              <a className="button button--yellow" data-hover-button href="#services">{text.explore}<ArrowMark /></a>
+              <a className="button button--beige" data-hover-button href="#services">{text.explore}<ArrowMark /></a>
               <a className="text-link text-link--light" href="#projects">{text.seeWork}<span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -104,7 +103,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </article>
               ))}
             </div>
-            <div className="services-note" data-reveal><span className="yellow-dot" />{text.servicesBody}</div>
+            <div className="services-note" data-reveal><span className="beige-dot" />{text.servicesBody}</div>
           </div>
         </section>
 
@@ -162,7 +161,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section aria-labelledby="contact-title" className="contact-section section-pad" id="contact">
-          <div className="contact-yellow-rule" />
+          <div className="contact-beige-rule" />
           <div className="page-wrap contact-layout">
             <div className="contact-copy" data-reveal>
               <Eyebrow light>{text.contactEyebrow}</Eyebrow>
@@ -175,18 +174,18 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <a href="mailto:arbernerjaku66@gmail.com">ARBERNERJAKU66@GMAIL.COM <ArrowMark /></a>
               </div>
             </div>
-            <div data-reveal><ContactForm locale={locale} /></div>
+            <div data-reveal><ContactForm /></div>
           </div>
         </section>
       </main>
       <footer className="site-footer">
         <div className="page-wrap footer-main">
-          <div className="footer-brand-column"><a aria-label="Nerjaku Group home" href={locale === "en" ? "/" : `/${locale}`}><BrandLogo small /></a><p>{text.location}</p><p className="footer-social-note">{text.socialsPlaceholder}</p></div>
+          <div className="footer-brand-column"><a aria-label="Nerjaku Group — faqja kryesore" href="/"><BrandLogo small /></a><p>{text.location}</p><p className="footer-social-note">{text.socialsPlaceholder}</p></div>
           <div className="footer-column"><h2>{text.linksFooter}</h2>{text.nav.map((label, index) => <a href={`#${ids[index]}`} key={ids[index]}>{label}</a>)}</div>
           <div className="footer-column"><h2>{text.servicesFooter}</h2>{text.services.slice(0, 4).map((service) => <a href="#services" key={service.title}>{service.title}</a>)}</div>
           <div className="footer-column"><h2>{text.contact}</h2><a href="tel:+355682939145">+355 68 293 9145</a><a href="mailto:arbernerjaku66@gmail.com">arbernerjaku66@gmail.com</a><span>{text.contactCity}</span></div>
         </div>
-        <div className="page-wrap footer-bottom"><span>{text.copyright.replace("{year}", "2026")}</span><a href="#home">{text.backTop}</a><span>EN · SQ · IT</span></div>
+        <div className="page-wrap footer-bottom"><span>{text.copyright.replace("{year}", "2026")}</span><a href="#home">{text.backTop}</a><span>DURRËS · SHQIPËRI</span></div>
       </footer>
     </SiteMotion>
   );

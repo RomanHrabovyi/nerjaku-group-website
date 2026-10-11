@@ -2,23 +2,21 @@
 
 import { useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
-import { copy, type Locale, locales } from "@/lib/site-content";
+import { copy } from "@/lib/site-content";
 
-const paths: Record<Locale, string> = { en: "/", sq: "/sq", it: "/it" };
-
-export function SiteHeader({ locale }: { locale: Locale }) {
+export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const text = copy[locale];
+  const text = copy;
   const ids = ["home", "services", "projects", "about", "contact"];
 
   return (
     <header className="site-header">
       <div className="header-inner">
-        <a aria-label="Nerjaku Group home" className="brand-link" href={paths[locale]}>
+        <a aria-label="Nerjaku Group — faqja kryesore" className="brand-link" href="/">
           <BrandLogo />
         </a>
 
-        <nav aria-label="Main navigation" className={`main-nav${menuOpen ? " is-open" : ""}`}>
+        <nav aria-label="Navigimi kryesor" className={`main-nav${menuOpen ? " is-open" : ""}`}>
           {text.nav.map((label, index) => (
             <a href={`#${ids[index]}`} key={ids[index]} onClick={() => setMenuOpen(false)}>
               {label}
@@ -30,20 +28,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="header-actions">
-          <div aria-label={text.language} className="language-switcher">
-            {locales.map((item) => (
-              <a
-                aria-current={locale === item ? "page" : undefined}
-                aria-label={copy[item].localeName}
-                className={locale === item ? "active" : ""}
-                href={paths[item]}
-                key={item}
-              >
-                {item.toUpperCase()}
-              </a>
-            ))}
-          </div>
-          <a className="button button--yellow header-quote" href="#contact">
+          <a className="button button--beige header-quote" href="#contact">
             {text.quote} <span aria-hidden="true">↗</span>
           </a>
           <button
