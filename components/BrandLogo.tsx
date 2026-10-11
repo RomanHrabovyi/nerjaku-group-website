@@ -9,7 +9,13 @@ export function BrandLogo({ small = false }: BrandLogoProps) {
       className={`brand-crop${small ? " brand-crop--small" : ""}`}
       role="img"
     >
-      <Image alt="" aria-hidden height={675} src="/nerjaku-brand-source.jpg" unoptimized width={1200} />
+      <Image
+        alt=""
+        aria-hidden
+        height={230}
+        src="/nerjaku-logo-beige.svg"
+        width={850}
+      />
     </span>
   );
 }

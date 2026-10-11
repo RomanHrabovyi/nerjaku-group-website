@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 230" role="img" aria-labelledby="title">
+  <title id="title">Nerjaku Group</title>
+  <g fill="#D5C2A1" font-family="Arial, Helvetica, sans-serif" font-weight="900">
+    <path d="M12 119 143 14l130 105h-37L143 49 49 119z"/>
+    <text x="42" y="207" font-size="134" letter-spacing="-14">NG</text>
+  </g>
+  <g fill="#D5C2A1" font-family="Arial, Helvetica, sans-serif" font-weight="900">
+    <text x="310" y="100" font-size="87" letter-spacing="1">NERJAKU</text>
+    <text x="365" y="199" font-size="87" letter-spacing="1">GROUP</text>
+  </g>
+</svg>

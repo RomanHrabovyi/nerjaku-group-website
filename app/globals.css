@@ -39,11 +39,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .section-pad { padding-block: var(--section-space); }
 .site-root { min-height: 100vh; overflow-x: clip; }
 
-/* Logo crop: the supplied image is kept intact; this viewport reveals its original lockup. */
-.brand-crop { display: block; position: relative; width: 260px; height: 73px; overflow: hidden; background: #050505; }
-.brand-crop img { position: absolute; top: -10px; left: -20px; width: 400px; max-width: none; height: auto; filter: sepia(.42) saturate(.72); }
-.brand-crop--small { width: 224px; height: 63px; }
-.brand-crop--small img { top: -8.6px; left: -17.2px; width: 344.8px; }
+/* The brand mark is an isolated vector, so its background stays transparent. */
+.brand-crop { display: block; flex: 0 0 auto; width: 260px; height: auto; }
+.brand-crop img { display: block; width: 100%; max-width: 100%; height: auto; }
+.brand-crop--small { width: 224px; }
 
 /* Header */
 .site-header { position: relative; z-index: 50; background: var(--ink); color: var(--paper); }
@@ -208,8 +207,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 1080px) {
   :root { --page-gutter: clamp(24px, 5vw, 56px); }
   .header-inner { gap: 18px; }
-  .brand-crop { width: 220px; height: 62px; }
-  .brand-crop img { top: -8.5px; left: -17px; width: 338.5px; }
+  .brand-crop { width: 220px; }
   .main-nav { gap: 16px; }
   .main-nav > a:not(.mobile-quote) { font-size: 9px; }
   .header-actions { gap: 12px; }
@@ -222,8 +220,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   :root { --page-gutter: 22px; --section-space: 88px; }
   html { scroll-padding-top: 72px; }
   .header-inner { min-height: 72px; }
-  .brand-crop { width: 174px; height: 49px; }
-  .brand-crop img { top: -6.7px; left: -13.4px; width: 267.8px; }
+  .brand-crop { width: 174px; }
   .header-actions { gap: 9px; }
   .header-quote { display: none; }
   .menu-toggle { width: 38px; height: 38px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px solid rgba(255,255,255,.3); background: transparent; cursor: pointer; }
@@ -296,16 +293,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .contact-form { padding: 23px 19px; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 36px 22px; padding-block: 43px 35px; }
   .footer-brand-column { grid-column: 1 / -1; }
-  .brand-crop--small { width: 174px; height: 49px; }
-  .brand-crop--small img { top: -6.7px; left: -13.4px; width: 267.8px; }
+  .brand-crop--small { width: 174px; }
   .footer-bottom { flex-wrap: wrap; font-size: 8px; }
   .footer-bottom > span:first-child { width: 100%; }
 }
 
 @media (max-width: 380px) {
   :root { --page-gutter: 17px; }
-  .brand-crop { width: 154px; height: 44px; }
-  .brand-crop img { top: -5.9px; left: -11.8px; width: 235.8px; }
+  .brand-crop { width: 154px; }
   .hero h1 { font-size: 39px; }
   .hero h1 .hero-title-last { font-size: 34px; }
   .services-grid { column-gap: 10px; }
